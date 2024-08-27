@@ -1,0 +1,34 @@
+.hero{
+    background: linear-gradient(to right, $main, $secondary);
+    color: $text-inverse;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+
+.sidebars{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.hero-img{
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+
+

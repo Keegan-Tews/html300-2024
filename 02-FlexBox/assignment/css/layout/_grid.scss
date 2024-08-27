@@ -1,0 +1,22 @@
+
+
+//Grid for header and nav
+.grid{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.grid-col-span-2{
+    grid-column: span 2;
+}
+
+//Grid for main content
+
+.grid-main{
+    display: grid;
+    justify-items: center;
+    gap: 4.5em;
+    grid-template-columns: repeat(3, 1fr);
+}

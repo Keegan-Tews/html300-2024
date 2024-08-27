@@ -1,0 +1,23 @@
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+
+.img{
+    max-width: 100%;
+    height: auto;
+}
+
+.container{
+    background: linear-gradient(to right, $main, $secondary);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.unstyled-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
