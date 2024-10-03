@@ -1,18 +1,18 @@
 <script setup>
 import { ref, computed } from 'vue'
+import Navbar from './components/Navbar.vue'
 import Home from './components/Home.vue'
-import Head from './components/Head.vue'
-import Foot from './components/Foot.vue'
-import grid from './components/grid.vue'
-import accordion from './components/accordion.vue'
-import images from './components/images.vue'
+import Footer from './components/Footer.vue'
+import Grid from './components/Grid.vue'
+import Accordion from './components/Accordion.vue'
+import Images from './components/Images.vue'
 import NotFound from './components/Not-Found.vue'
 
 const routes = {
   '/': Home,
-  '/grid': grid,
-  '/accordion': accordion,
-  '/images': images,
+  '/grid': Grid,
+  '/accordion': Accordion,
+  '/images': Images,
   '/not-found': NotFound
 }
 
@@ -27,13 +27,21 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <Head>
-    <div>
-      <slot name="head"></slot>
-      <slot name="nav"></slot>
-    </div>
-  </Head>
+  <Navbar>
+    <template #page-title>
+      <h1 class="text-center">{{ title }}</h1>
+    </template>
+    <template #page-info>
+      <p class="text-center">This is a simple Vue app that demonstrates how to use Vue</p>
+    </template>
+    <!-- This is the header slot -->
+  </Navbar>
+  <!-- Place components in the area of the main element so that each nav link will place the content for each component in the main area. -->
   <component :is="currentView.value"></component>
+
+  <Footer>
+    <!-- This is the footer slot -->
+  </Footer>
 </template>
 
 <style scoped></style>
