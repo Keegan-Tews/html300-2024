@@ -15,17 +15,17 @@ const routes = [
   {
     path: '/Accordion',
     name: 'Accordion',
-    component: () => import('../components/Accordion.vue')
+    component: Accordion
   },
   {
     path: '/Images',
     name: 'Images',
-    component: () => import('../components/Images.vue')
+    component: Images
   },
   {
     path: '/Grid',
     name: 'Grid',
-    component: () => import('../components/Grid.vue')
+    component: Grid
   }
 ]
 

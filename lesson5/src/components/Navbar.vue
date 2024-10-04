@@ -10,7 +10,7 @@ const title = ref('Dog Parks')
     <slot name="page-title">
       <h1 class="text-center">{{ title }}</h1>
     </slot>
-    <nav class="navbar navbar-expend-lg navbar-light bg-info justify-content-center py-3">
+    <nav class="navbar navbar-expend-lg navbar-light bg-info">
       <router-link to="/" class="navbar-brand text-white">{{ title }}</router-link>
       <button
         class="navbar-toggler"
@@ -19,7 +19,7 @@ const title = ref('Dog Parks')
         data-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="Toggle navigation"
+        aria-label="toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
