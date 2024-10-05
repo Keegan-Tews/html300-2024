@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
+const title = ref('accordion')
 //park data
 const parks = ref([
   {

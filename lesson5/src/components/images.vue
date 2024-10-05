@@ -2,29 +2,47 @@
 import { ref } from 'vue'
 import imageList from './imageList.vue'
 
-const name = ref('images')
+const title = ref('images')
 
 const images = ref([
   {
-    src: '@/assets/med1.jpg',
+    src: 'https://images.pexels.com/photos/236940/pexels-photo-236940.jpeg',
     alt: 'park',
     title: 'park',
     class: 'img-fluid h-100 p-0 d-block mx-auto'
   },
   {
-    src: '@/assets/med2.jpg',
+    src: '../src/assets/med1.jpg',
     alt: 'park',
     title: 'park',
     class: 'img-fluid h-100 p-0 d-block mx-auto'
   },
   {
-    src: '@/assets/med3.jpg',
+    src: '../src/assets/med2.jpg',
     alt: 'park',
     title: 'park',
     class: 'img-fluid h-100 p-0 d-block mx-auto'
   },
   {
-    src: '@/assets/med4.jpg',
+    src: '../src/assets/med3.jpg',
+    alt: 'park',
+    title: 'park',
+    class: 'img-fluid h-100 p-0 d-block mx-auto'
+  },
+  {
+    src: '../src/assets/med4.jpg',
+    alt: 'park',
+    title: 'park',
+    class: 'img-fluid h-100 p-0 d-block mx-auto'
+  },
+  {
+    src: '../src/assets/med1.jpg',
+    alt: 'park',
+    title: 'park',
+    class: 'img-fluid h-100 p-0 d-block mx-auto'
+  },
+  {
+    src: '../src/assets/med2.jpg',
     alt: 'park',
     title: 'park',
     class: 'img-fluid h-100 p-0 d-block mx-auto'

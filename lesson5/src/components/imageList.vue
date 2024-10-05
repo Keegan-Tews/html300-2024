@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { defineProps, ref } from 'vue'
 
 // Prop with type validator and default value
-const prop = defineProps({
-  scr: string,
-  alt: string,
-  title: string,
-  class: string,
-  index: number
+const props = defineProps({
+  src: String,
+  alt: String,
+  title: String,
+  class: String,
+  index: Number
 })
 
-let hasBoarder = ref(false)
+const hasBoarder = ref(false)
 function toggleBoarder(i, index) {
   this.hasBoarder = !this.hasBoarder
   if (this.hasBoarder === true) {
@@ -27,10 +27,10 @@ function toggleBoarder(i, index) {
   <div class="col-3">
     <img
       :key="index"
-      :src="prop.src"
-      :alt="prop.alt"
-      :title="prop.title"
-      :class="prop.class"
+      :src="props.src"
+      :alt="props.alt"
+      :title="props.title"
+      :class="props.class"
       @click="toggleBoarder($event, index)"
     />
   </div>
