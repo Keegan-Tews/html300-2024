@@ -10,6 +10,7 @@ const props = defineProps({
   index: Number
 })
 
+//mixin for toggling border
 const hasBoarder = ref(false)
 function toggleBoarder(i, index) {
   this.hasBoarder = !this.hasBoarder

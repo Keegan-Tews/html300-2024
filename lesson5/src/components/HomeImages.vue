@@ -1,88 +1,40 @@
 <script setup>
 import { defineProps, ref } from 'vue'
-import toggleMixin from '@/mixin/toggleMixin'
 
-// props for array of image objects passed from the parent
+// Prop with type validator and default value
 const props = defineProps({
-  images: {
-    type: Array,
-    required: true,
-    validator(images) {
-      return images.every(
-        (image) =>
-          typeof image.src === 'string' &&
-          typeof image.alt === 'string' &&
-          typeof image.caption === 'string' &&
-          typeof image.description === 'string'
-      )
-    }
-  }
+  src: String,
+  alt: String,
+  title: String,
+  class: String,
+  index: Number
 })
 
-// initializes the mixin for each of the images
-const { hasBorder, toggleBorder } = toggleMixin(props.images.length)
+//mixin for toggling border
+const hasBoarder = ref(false)
+function toggleBoarder(i, index) {
+  this.hasBoarder = !this.hasBoarder
+  if (this.hasBoarder === true) {
+    console.log(index + 'is active')
+    i.target.style.border = '2px solid red'
+  } else {
+    console.log(index + 'is not active')
+    i.target.style.border = 'none'
+  }
+}
 </script>
 
 <template>
-  <div id="carouselExample" class="carousel slide" data-ride="carousel">
-    <!-- slot for page-header content passed from InspirationPage.vue (parent) -->
-    <slot></slot>
-
-    <div class="carousel-inner">
-      <!-- loops through the images array -->
-      <div
-        v-for="(image, index) in images"
-        :key="index"
-        :class="['carousel-item', { active: index === 0 }]"
-      >
-        <!-- adds a border that toggles when clicked -->
-        <img
-          :src="image.src"
-          class="d-block w-100"
-          :alt="image.alt"
-          :style="{ border: hasBorder(index) ? '2px solid red' : 'none' }"
-          @click="toggleBorder(index)"
-        />
-        <div class="carousel-caption d-block text-center p-4 bg-custom-opacity rounded">
-          <h5>{{ image.title }}</h5>
-          <p class="lead d-none d-md-block">{{ image.description }}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- provides carousel controls -->
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  <div class="col-3">
+    <img
+      :key="index"
+      :src="props.src"
+      :alt="props.alt"
+      :title="props.title"
+      :class="props.class"
+      @click="toggleBoarder($event, index)"
+    />
   </div>
 </template>
 
-<style scoped>
-/* adds a background color to the directional arrows to provide contrast for readability */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  width: 3.125rem;
-  height: 3.125rem;
-}
-/* adds a background color to the text to provide contrast for readability */
-.bg-custom-opacity {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-</style>
+<style scoped></style>

@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 // imports the HomeImages component and Vue's ref function to manage reactivity
 import HomeImages from './HomeImages.vue'
-import toggleMixin from '@/mixin/toggleMixin'
 
 // array of images for the carousel that will display in the carousel component
 const images = ref([
@@ -25,31 +24,20 @@ const images = ref([
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
   }
 ])
-
-// logs the image array to the console for debugging purposes
-console.log(images.value)
 </script>
 
 <template>
-  <div class="bground">
-    <!-- passed the header content to CarouselImages.vue using a slot -->
-    <HomeImages :images="images">
-      <h1>Home</h1>
-    </HomeImages>
+  <div class="img-container mt-5 d-flex flex-wrap gap-1 justify-content-center">
+    <HomeImages
+      v-for="(image, index) in images"
+      :key="index"
+      :src="image.src"
+      :alt="image.alt"
+      :title="image.title"
+      :class="image.class"
+      :index="index"
+    />
   </div>
 </template>
 
-<style scoped>
-h1 {
-  text-align: center;
-  font-size: 24px;
-  color: white;
-  padding-top: 10px;
-  margin-bottom: 10px;
-}
-/* adds a background color rather than a background image */
-.bground {
-  background-color: #2d462f;
-  min-height: 100vh;
-}
-</style>
+<style scoped></style>
