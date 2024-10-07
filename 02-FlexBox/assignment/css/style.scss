@@ -1,6 +1,24 @@
 // Import partials here
-@import 'base.normalize';
-@import 'settings.variables';
-@import 'settings.responsive';
-@import 'components.content';
+ @import 'base.normalize';
+ @import 'settings.variables';
+ @import 'settings.responsive';
+ @import 'components.content';
 
+// Import abstracts here, Config files and helpers
+ @import 'abstract/colors';
+  
+
+ // Import base styles here
+ @import 'base/base';     
+
+
+// Import layout
+ @import 'layout/grid'; 
+ @import 'layout/header';
+ @import 'layout/hero';   
+ @import 'layout/nav'; 
+ @import 'layout/footer';                                                   
+
+
+// Import components here
+ @import 'components/buttons';        

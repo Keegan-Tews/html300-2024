@@ -1,0 +1,17 @@
+.main-header{
+    background: linear-gradient(to right, $main, $secondary);
+    color: $text-inverse;
+}
+
+.logo{
+    width: 25%;
+   
+}
+
+.tennis{
+    width: 50%;
+    min-width: 10rem;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}

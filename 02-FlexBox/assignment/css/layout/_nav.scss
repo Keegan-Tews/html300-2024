@@ -1,0 +1,12 @@
+.main-nav{
+    color: $text-inverse;
+    padding: 1em;
+    text-align: center;
+}
+
+.unstyled-list{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
