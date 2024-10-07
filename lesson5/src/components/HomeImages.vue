@@ -1,40 +1,37 @@
 <script setup>
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
+import imageMixin from '@/Mixin/imageMixin'
 
-// Prop with type validator and default value
-const props = defineProps({
-  src: String,
-  alt: String,
-  title: String,
-  class: String,
-  index: Number
-})
+const borderVisible = ref(false)
 
-//mixin for toggling border
-const hasBoarder = ref(false)
-function toggleBoarder(i, index) {
-  this.hasBoarder = !this.hasBoarder
-  if (this.hasBoarder === true) {
-    console.log(index + 'is active')
-    i.target.style.border = '2px solid red'
-  } else {
-    console.log(index + 'is not active')
-    i.target.style.border = 'none'
-  }
+function toggleBorder() {
+  borderVisible.value = !borderVisible.value
 }
+
+defineProps({
+  src: {
+    type: String,
+    required: true,
+    validator: function (value) {
+      const validFormats = /\.(jpeg|jpg|gif|png)$/i
+      return validFormats.test(value)
+    }
+  },
+  title: {
+    type: String,
+    default: 'Park'
+  }
+})
 </script>
 
 <template>
-  <div class="col-3">
-    <img
-      :key="index"
-      :src="props.src"
-      :alt="props.alt"
-      :title="props.title"
-      :class="props.class"
-      @click="toggleBoarder($event, index)"
-    />
+  <div @click="toggleBorder" class="col-3">
+    <img class="img-fluid" :src="src" :class="{ 'image-border': borderVisible }" />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.image-border {
+  border: 2px solid red;
+}
+</style>

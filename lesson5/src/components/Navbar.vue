@@ -23,7 +23,7 @@ const title = ref('Dog Parks')
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse d-flex justify-content-center py-3" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link to="/" class="nav-link text-white">Home</router-link>

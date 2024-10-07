@@ -13,50 +13,60 @@ const gridOne = ref([
     body: `This is a list of parks in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-3 text-center`,
     title: `Park One`,
     body: `This is a park in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-3 text-center`,
     title: `Park Two`,
     body: `This is a park in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-3 text-center`,
     title: `Park Three`,
     body: `This is a park in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-3 text-center`,
     title: `Park Four`,
     body: `This is a park in your area.`
   }
 ])
 const gridTwo = ref([
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-12 text-center`,
+    title: `Dog Park in Your Area`,
+    body: `This is a list of dog parks in your area.`
+  },
+  {
+    class: `col-lg-6 text-center`,
     title: `Dog Park One`,
     body: `This is a Dog Park in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-6 text-center`,
     title: `Dog Park Two`,
     body: `This is a Dog Park in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-6 text-center`,
     title: `Dog Park Three`,
     body: `This is a Dog Park in your area.`
   },
   {
-    class: `col-lg-4 text-center`,
+    class: `col-lg-6 text-center`,
     title: `Dog Park Four`,
     body: `This is a Dog Park in your area.`
   }
 ])
 
 const gridThree = ref([
+  {
+    class: `col-lg-12 text-center`,
+    title: `Hiking Park in Your Area`,
+    body: `This is a list of Hiking Parks in your area.`
+  },
   {
     class: `col-lg-4 text-center`,
     title: `Hiking Park One`,
