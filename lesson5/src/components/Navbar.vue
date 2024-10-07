@@ -7,9 +7,6 @@ const title = ref('Dog Parks')
 
 <template>
   <div>
-    <slot name="page-title">
-      <h1 class="text-center">{{ title }}</h1>
-    </slot>
     <nav class="navbar navbar-expend-lg navbar-light bg-info">
       <router-link to="/" class="navbar-brand text-white">{{ title }}</router-link>
       <button
@@ -40,7 +37,6 @@ const title = ref('Dog Parks')
         </ul>
       </div>
     </nav>
-    <slot name="page-info"> <h2>test</h2> </slot>
   </div>
 </template>
 

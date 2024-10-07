@@ -3,7 +3,7 @@ import { ref } from 'vue'
 // imports the HomeImages component and Vue's ref function to manage reactivity
 import HomeImages from './HomeImages.vue'
 
-// array of images for the carousel that will display in the carousel component
+// array of images
 const images = ref([
   {
     src: '../src/assets/med1.jpg',
@@ -28,6 +28,11 @@ const images = ref([
 
 <template>
   <div class="img-container mt-5 d-flex flex-wrap gap-1 justify-content-center">
+    <NavSlot>
+      <slot name="header">
+        <h1>{{ title }}</h1>
+      </slot>
+    </NavSlot>
     <HomeImages
       v-for="(image, index) in images"
       :key="index"

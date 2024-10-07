@@ -4,6 +4,7 @@ import imageMixin from '@/Mixin/imageMixin'
 
 const borderVisible = ref(false)
 
+// Mixin
 function toggleBorder() {
   borderVisible.value = !borderVisible.value
 }
