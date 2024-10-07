@@ -1,0 +1,22 @@
+.btn{
+    font-size: inherit;
+}
+
+.btn:not(.collapsed){
+    color: inherit;
+    background: rgb(35, 65, 100);
+    color: #e8e8e8;
+}
+
+
+
+.card{
+    font-size: inherit;
+    border: 1px solid rgba( 35, 65, 100, .15);
+}
+
+.card:not(.collapsed){
+    color: inherit;
+    background: rgb(35, 65, 100);
+    color: #e8e8e8;
+}
