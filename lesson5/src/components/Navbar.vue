@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 
 // Variable to make the title dynamic
 const title = ref('Dog Parks')
@@ -7,8 +8,10 @@ const title = ref('Dog Parks')
 
 <template>
   <div>
-    <nav class="navbar navbar-expend-lg navbar-light bg-info">
-      <router-link to="/" class="navbar-brand text-white">{{ title }}</router-link>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+      <router-link to="/" class="navbar-brand text-white d-flex justify-content-center ml-2">{{
+        title
+      }}</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,7 +19,7 @@ const title = ref('Dog Parks')
         data-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="toggle navigation"
+        aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,5 +46,9 @@ const title = ref('Dog Parks')
 <style scoped>
 h1 {
   color: black;
+}
+.nav-link {
+  color: black;
+  font-size: 2em;
 }
 </style>

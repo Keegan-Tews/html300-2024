@@ -1,8 +1,6 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import imageList from './imageList.vue'
-
-const title = ref('images')
 
 const images = ref([
   {
@@ -48,6 +46,21 @@ const images = ref([
     class: 'img-fluid h-100 p-0 d-block mx-auto'
   }
 ])
+// const showElement = setTimeout(() => {
+//   console.log('showElement')
+//   this.showElement = true
+// }, 10000)
+// const toggle = ref(false)
+
+const toggle = ref(false)
+const showElement = ref(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    console.log('showElement')
+    showElement.value = true
+  }, 10000)
+})
 </script>
 
 <template>
@@ -61,6 +74,22 @@ const images = ref([
       :class="image.class"
       :index="index"
     />
+  </div>
+
+  <!-- required v-if and v-else directives -->
+  <div class="container">
+    <button @click="toggle = !toggle" class="btn btn-primary mt-3">
+      {{ toggle ? 'Not a fan?' : 'Do you like dogs?' }} If so click here
+    </button>
+
+    <transition name="fade2">
+      <div v-if="toggle">
+        <p class="text-center mt-3">I like dog too!</p>
+      </div>
+      <div v-else="(showElement = true)">
+        <p class="text-center mt-3">I don't like dogs either.</p>
+      </div>
+    </transition>
   </div>
 </template>
 

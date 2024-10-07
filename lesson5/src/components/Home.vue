@@ -24,6 +24,8 @@ const images = ref([
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
   }
 ])
+
+const toggle = ref(false)
 </script>
 
 <template>
@@ -33,15 +35,29 @@ const images = ref([
         <h1>{{ title }}</h1>
       </slot>
     </NavSlot>
-    <HomeImages
-      v-for="(image, index) in images"
-      :key="index"
-      :src="image.src"
-      :alt="image.alt"
-      :title="image.title"
-      :class="image.class"
-      :index="index"
-    />
+  </div>
+  <div class="container">
+    <h3 class="text-center mt-5">Dog Parks in the area</h3>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <button @click="toggle = !toggle" class="btn btn-primary mt-3">
+          {{ toggle ? 'Hide' : 'Show' }} Images
+        </button>
+        <transition name="fade">
+          <div v-if="toggle" class="d-flex flex-wrap gap-1 justify-content-center">
+            <HomeImages
+              v-for="(image, index) in images"
+              :key="index"
+              :src="image.src"
+              :alt="image.alt"
+              :title="image.title"
+              :class="image.class"
+              :index="index"
+            />
+          </div>
+        </transition>
+      </div>
+    </div>
   </div>
 </template>
 
