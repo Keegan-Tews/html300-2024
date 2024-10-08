@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const name = ref('accordion')
+const name = ref('Facts about National Parks')
 //park data
 const parks = ref([
   {
@@ -44,6 +44,7 @@ const isOpen = (index) => {
 </script>
 
 <template>
+  <h2 class="d-flex justify-content-center align-items-center text-center">{{ name }}</h2>
   <div
     class="background-container d-flex flex-colum justify-content-center align-items-center text-center"
   >

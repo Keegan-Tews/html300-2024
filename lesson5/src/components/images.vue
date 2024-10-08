@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import imageList from './imageList.vue'
 
+const name = ref('Images submitted by users of our parks')
 const images = ref([
   {
     src: 'https://images.pexels.com/photos/236940/pexels-photo-236940.jpeg',
@@ -64,6 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <h2 class="d-flex justify-content-center align-items-center text-center">{{ name }}</h2>
   <div class="img-container mt-5 d-flex flex-wrap gap-1 justify-content-center">
     <imageList
       v-for="(image, index) in images"

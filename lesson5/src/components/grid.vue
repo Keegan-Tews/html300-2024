@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const name = ref('grid')
+const name = ref('Overview of Parks in the Area')
 
 const headerOne = ref('Parks')
 const headerTwo = ref('Dog Parks')
@@ -112,8 +112,9 @@ const gridThree = ref([
 
 <template>
   <div class="container">
+    <h2 class="d-flex justify-content-center align-items-center text-center">{{ name }}</h2>
     <div class="row bg-primary">
-      <h2>{{ headerOne }}</h2>
+      <h3>{{ headerOne }}</h3>
       <div :class="gOne.class" v-for="gOne in gridOne" :key="gOne.title">
         <h3 class="text-center">{{ gOne.title }}</h3>
         <p>{{ gOne.body }}</p>
@@ -121,7 +122,7 @@ const gridThree = ref([
     </div>
 
     <div class="row bg-info">
-      <h2>{{ headerTwo }}</h2>
+      <h3>{{ headerTwo }}</h3>
       <div :class="gTwo.class" v-for="gTwo in gridTwo" :key="gTwo.title">
         <h3 class="text-center">{{ gTwo.title }}</h3>
         <p>{{ gTwo.body }}</p>
@@ -129,7 +130,7 @@ const gridThree = ref([
     </div>
 
     <div class="row bg-warning">
-      <h2>{{ headerThree }}</h2>
+      <h3>{{ headerThree }}</h3>
       <div :class="gThree.class" v-for="gThree in gridThree" :key="gThree.title">
         <h3 class="text-center">{{ gThree.title }}</h3>
         <p>{{ gThree.body }}</p>
